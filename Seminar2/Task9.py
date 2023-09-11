@@ -8,7 +8,7 @@
 n = int(input('введите значение n: '))
 i = 1
 result = 1
-while i != n:
+while i <= n:
     i += 1
-    result = result * i
+    result *= i
 print(result)

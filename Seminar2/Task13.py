@@ -19,10 +19,12 @@
 data = [int(i) for i in input('введите числа через пробел: ').split()]
 n = len(data)
 if n > 100:
-    exit()
+    exit('превышено максимальное количество данных')
 max_count = 0
 count = 0
 for i in data:
+    if not -50 < i < 50:
+        exit('неверные данные')
     if i > 0:
         count += 1
     else:

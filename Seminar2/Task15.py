@@ -19,4 +19,4 @@ for i in range(1, len(data)):
         max_data = data[i]
     if data[i] < min_data:
         min_data = data[i]
-print(max_data, min_data)
+print(min_data, max_data)

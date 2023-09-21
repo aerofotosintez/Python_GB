@@ -26,7 +26,10 @@
 # 2.5 10
 
 orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
+
 import math
+
+
 def find_farthest_orbit(orbits):
     max_area = 0
     for a, b in orbits:

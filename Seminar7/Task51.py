@@ -29,3 +29,6 @@ if same_by(lambda x: x % 3, values):
     print('same')
 else:
     print('different')
+
+# в одну строку
+# return all([s == characteristic(objects[0]) if objects else True for s i map(characteristic, objects)])

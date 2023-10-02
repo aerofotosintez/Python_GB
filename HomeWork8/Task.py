@@ -20,9 +20,10 @@ def main():
         while True:
             print('1.Ввести данные')
             print('2.Поиск')
-            print('3.Выход')
+            print('3.Изменить данные')
+            print('4.Выход')
             user_choice = input('Введите выбор (1-3): ')
-            if user_choice not in ['1', '2', '3']:
+            if user_choice not in ['1', '2', '3', '4']:
                 print('Ошибка')
             else:
                 break
@@ -32,6 +33,8 @@ def main():
             case '2':
                 data_search(data)
             case '3':
+                update_delete_data(data)
+            case '4':
                 print('Досвидание')
                 if not data:
                     return
@@ -100,6 +103,40 @@ def update_delete_data(data):
                 print('Ошибка')
         else:
             break
+    if user_choice == '1':
+        update_data(data)
+    elif user_choice == '2':
+        delete_data(data)
+    elif user_choice == '3':
+        print('Выход ')
+        return
+    
+
+def update_data(data):
+    user_input = input('Введите ФИО для изменения данных: ')
+    if user_input in data:
+        new_num = input('Введите новый номер')
+        if new_num.isdigit():
+            data[user_input] = new_num
+            print('Номер изменен')
+        else:
+            print('Ошибка')
+    else:
+        print('Данных в справочнике нет')
+
+
+def delete_data(data):
+    user_input = input('Введите ФИО для удаления данных: ')
+    if user_input in data:
+        del data[user_input]
+    else:
+        print('Данных в справочнике нет')
+
+
+def save_data(data):
+    with open(file_name) as f:
+        for name in data:
+            print(f'{name}\t{data[name]}', file=f)
     
 
 if __name__ == '__main__':
